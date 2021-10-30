@@ -11111,6 +11111,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: searchfield-cancel-button;
+}
+
+.bg-override {
+  background-color: transparent;
+}
+
 .bg-primary {
   color: color-yiq(#3ba5dc);
   background-color: #3ba5dc !important;
