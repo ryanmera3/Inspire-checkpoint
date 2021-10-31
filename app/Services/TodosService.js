@@ -19,10 +19,31 @@ class TodosService {
   }
 
   async deleteTodo(id) {
-    await sandboxTodoApi.delete('/ryanm/todos/' + id)
-    ProxyState.Todo = ProxyState.Todo.filter(t => t.id != id)
+    if (window.confirm('Are you sure you want to delete this item?')) {
+
+      await sandboxTodoApi.delete('/ryanm/todos/' + id)
+      ProxyState.Todo = ProxyState.Todo.filter(t => t.id != id)
+      ProxyState.Todo = ProxyState.Todo
+    }
+  }
+  async putTodo(id) {
+    // const found = ProxyState.Todo.findIndex(f => f.id == id)
+    let find = ProxyState.Todo.find(f => f.id == id)
+    const res = await sandboxTodoApi.put('ryanm/todos/' + id, find)
+    find = new Todo(res.data)
     ProxyState.Todo = ProxyState.Todo
+    console.log(find, res.data);
+  }
+  isChecked(id) {
+    let found = ProxyState.Todo
+    found.forEach(f => {
+      if (f.id == id) {
+        f.completed = !f.completed
+      }
+    })
+    return ProxyState.Todo
   }
 }
+
 
 export const todosService = new TodosService()

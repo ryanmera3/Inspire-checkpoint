@@ -37,7 +37,7 @@
               <div class="row vh-100 flex-column">
                 <div class="col-md-8 h-75 w-100 d-flex align-items-end justify-content-end">
                   <div class="text-light text-center">
-                    <h3>Clock ph</h3>
+                    <h1 id="clock"></h1>
                     <div class="text-light text-center">
                       <h2 class="pb-5">Good Morning</h2>
                       <div class="text-center">
@@ -69,7 +69,9 @@
                     <form onsubmit="app.todosController.getTodo()" id="form-submitting">
                       <div class="card text-white bg-dark mb-3 w-100 text-start opacity-75">
                         <div class="card-header">Todo</div>
+                        <div id="my-count" class="text-center"></div>
                         <div class="card-body">
+
                           <ul id="todo-form">
                           </ul>
                           <input type="text" placeholder="New Todo" name="description" id="search-query"

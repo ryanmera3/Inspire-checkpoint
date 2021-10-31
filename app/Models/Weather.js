@@ -8,7 +8,11 @@ export class Weather {
   }
 
   get Template() {
-    return `<h4 class="text-end">${this.main}°F / ${this.celsius}°C</h4>
+    return `
+    <div id="temp-switch">
+    <h4 class="text-end" id="fahr">${this.main} °F</h4>
+    <h4 class="text-end visually-hidden" id="cels">${this.celsius} °C</h4>
+    </div>
     <h4 class=" my-1text-end"> ${this.name}</h4>
     `
 

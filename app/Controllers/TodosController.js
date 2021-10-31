@@ -8,17 +8,29 @@ function _draw() {
   document.getElementById('todo-form').innerHTML = template
 }
 
+function _drawCount() {
+  const todo = ProxyState.Todo
+  let template = ''
+  let countTodo = todo.filter(t => t.completed).length
+  template = `<h4 class="text-info"> ${countTodo}/${todo.length}</h4>`
+  document.getElementById('my-count').innerHTML = template
+
+}
+
 
 export class TodosController {
   constructor() {
     ProxyState.on('Todo', _draw)
+    ProxyState.on('Todo', this.isChecked)
+    ProxyState.on('Todo', _drawCount)
+    this.isChecked()
     this.addTodo()
-    this.getTodo()
     _draw()
+    _drawCount()
 
   }
 
-  async getTodo() {
+  async getTodo(id) {
     try {
 
       window.event.preventDefault()
@@ -28,6 +40,7 @@ export class TodosController {
         description: form.description.value
       }
       await todosService.getTodo(newForm)
+
 
       // @ts-ignore
       form.reset()
@@ -48,6 +61,23 @@ export class TodosController {
       await todosService.deleteTodo(id)
     } catch (error) {
       console.error("DeleteTodo is broken", error)
+    }
+  }
+
+  async putTodo(id) {
+    try {
+      await todosService.putTodo(id)
+    } catch (error) {
+      console.error("putTodo is broken", error)
+
+    }
+  }
+  async isChecked(id) {
+    try {
+      await todosService.isChecked(id)
+    } catch (error) {
+      console.error("isChecked controller is busted", error)
+
     }
   }
 }

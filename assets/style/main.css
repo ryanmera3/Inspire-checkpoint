@@ -11113,6 +11113,12 @@ textarea.form-control-lg {
 }
 #search-query {
   background-color: transparent !important;
+  outline: none !important;
+}
+
+.search-query {
+  background-color: transparent !important;
+  outline: none !important;
 }
 
 .text-shadow {
