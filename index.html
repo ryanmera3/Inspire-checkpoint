@@ -8,7 +8,7 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css'>
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>Inspire-checkpoint</title>
@@ -23,7 +23,7 @@
     </nav>
   </header> -->
   <main>
-    <div class="container-fluid">
+    <div class="container-fluid text-shadow">
       <div class="row">
         <div class="col-md-12">
           <div class="row vh-100 mx-auto">
@@ -35,12 +35,16 @@
             </div>
             <div class="col-md-4">
               <div class="row vh-100 flex-column">
-                <div class="col-md-8 h-75 w-100 d-flex align-items-center justify-content-center">
+                <div class="col-md-8 h-75 w-100 d-flex align-items-end justify-content-end">
                   <div class="text-light text-center">
-                    <h2 class="pb-5">Good Morning, Dude.</h2>
-                    <div class="text-center">
-                      <h4 class="mt-5">What is your main focus for today?</h4>
-                      <input type="search" id="bg-override">
+                    <h3>Clock ph</h3>
+                    <div class="text-light text-center">
+                      <h2 class="pb-5">Good Morning</h2>
+                      <div class="text-center">
+                        <h4 class="mt-5">What is your main focus for today?</h4>
+                        <input type="search" class="border-bottom border-2 border-0 w-100 mt-5 text-light text-shadow"
+                          style="background-color: transparent; outline:none">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -53,8 +57,29 @@
 
             </div>
             <div class="col-md-4 text-end">
-              <div class="text-light">
-                <p id="weather" class="m-3"></p>
+              <div class="row flex-column align-items-end h-100">
+                <div class="col-md-6 ">
+                  <div class="text-light">
+                    <p id="weather" class="m-3"></p>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end h-75 align-items-end w-100">
+                  <div class="text-light w-75">
+
+                    <form onsubmit="app.todosController.getTodo(event)" id="form-submitting">
+                      <div class="card text-white bg-dark mb-3 w-100 text-start opacity-75">
+                        <div class="card-header">Todo</div>
+                        <div class="card-body">
+                          <ul id="todo-form">
+                          </ul>
+                          <input type="text" placeholder="New Todo" name="description" id="search-query"
+                            class="border-0 text-light mt-2">
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -7,8 +7,8 @@ export class Quote {
 
   get Template() {
     return `
-    <h6>"${this.content}"</h6>
-    <p> ${this.author}</p>
+    <h6 small class="quote hover">"${this.content}"</h6 small>
+    <h6 small class="author-hover"> -${this.author}</h6 small>
     `
   }
 }

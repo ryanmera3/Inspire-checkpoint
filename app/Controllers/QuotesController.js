@@ -10,11 +10,11 @@ function _drawQuote() {
 }
 
 
+
 export class QuotesController {
   constructor() {
     this.getQuote()
     ProxyState.on('quote', _drawQuote)
-    console.log("Quotes Controller is working")
   }
   async getQuote() {
     try {

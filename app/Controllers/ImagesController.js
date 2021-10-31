@@ -15,7 +15,6 @@ export class ImagesController {
   constructor() {
     this.getImage()
     ProxyState.on('image', _drawImage)
-    console.log(("The weather controller is working"));
   }
   async getImage() {
     try {

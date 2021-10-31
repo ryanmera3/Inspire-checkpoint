@@ -12,7 +12,6 @@ export class WeathersController {
   constructor() {
     this.getWeather()
     ProxyState.on('weather', _drawWeather)
-    console.log(("The weather controller is working"));
   }
   async getWeather() {
     try {

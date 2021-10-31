@@ -12,6 +12,9 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Quote').Quote} */
 
   quote = null
+
+  /** @type {import('./Models/Todo').Todo[]} */
+  Todo = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {

@@ -11111,12 +11111,21 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-input[type=search]::-webkit-search-cancel-button {
-  -webkit-appearance: searchfield-cancel-button;
+#search-query {
+  background-color: transparent !important;
 }
 
-.bg-override {
-  background-color: transparent;
+.text-shadow {
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+#quote > .author-hover {
+  display: none;
+}
+
+#quote:hover > .author-hover {
+  display: block;
 }
 
 .bg-primary {

@@ -8,8 +8,8 @@ export class Image {
 
   get Template() {
     return `
-    <p> Tags: ${this.tags} </p>
-    <p> Author: ${this.author}</p>
+    <h6 small class="mb-3"> Tags: ${this.tags} </h6 small>
+    <h6 small class="mb-3"> Author: ${this.author}</h6 small>
     `
   }
 
