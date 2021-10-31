@@ -18,7 +18,7 @@ export class TodosController {
 
   }
 
-  async getTodo(event) {
+  async getTodo() {
     try {
 
       window.event.preventDefault()

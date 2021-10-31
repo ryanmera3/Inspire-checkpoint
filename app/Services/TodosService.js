@@ -8,14 +8,14 @@ class TodosService {
 
 
   async getTodo(newTodo) {
-    let res = newTodo
-    let result = await sandboxTodoApi.post('/ryanm/todos', res)
-    return result.data
-
+    let result = await sandboxTodoApi.post('/ryanm/todos', newTodo)
+    const results = new Todo(result.data)
+    ProxyState.Todo = [...ProxyState.Todo, results]
   }
   async addTodo() {
     let res = await sandboxTodoApi.get('/ryanm/todos')
     ProxyState.Todo = res.data.map(t => new Todo(t))
+    ProxyState.Todo = ProxyState.Todo
   }
 
   async deleteTodo(id) {
